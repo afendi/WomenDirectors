@@ -1,0 +1,100 @@
+﻿@model Wbod.Models.DB.Directors
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+
+<div class="bd-example">
+    <h5>Director's Details</h5>
+</div>
+
+<div>
+    <a href="@Context.Request.Headers["Referer"]" class="btn btn-info">Back</a> |
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+</div>
+<p></p>  
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Director Data</h5>
+                    <p class="card-text">
+                        <strong>Title: </strong>@Html.DisplayFor(model => model.TitledarjahNavigation.Titletype)<br />
+                        <strong>Name</strong><br />
+                        @Html.DisplayFor(model => model.Name)<br />
+                        <strong>Gender: </strong>@Html.DisplayFor(model => model.GenderNavigation.Gendertype)<br />
+                        <strong>Age: </strong>@Html.DisplayFor(model => model.Age)<br />
+                        <strong>Year of Birth: </strong>@Html.DisplayFor(model => model.Yearofbirth)<br />
+                        <strong>Citizenship: </strong>@Html.DisplayFor(model => model.CitizenshipNavigation.Citizentype)<br />
+                        <strong>Ethnicity: </strong> @Html.DisplayFor(model => model.EthnicityNavigation.Race)<br />
+                        <strong>Family Ties 1: </strong>@Html.DisplayFor(model => model.FamilytiesoneNavigation.Tiestype)<br />
+                        <strong>Family Ties 2: </strong>@Html.DisplayFor(model => model.FamilytiestwoNavigation.Tiestype)<br />
+
+                        <h6 class="card-title">Education</h6>
+                        <strong>Level: </strong>@Html.DisplayFor(model => model.EducationlevelNavigation.Edulevel)<br />
+                        <strong>Place: </strong> @Html.DisplayFor(model => model.PlaceofeducationNavigation.Place)<br />
+                        <strong>Field: </strong>@Html.DisplayFor(model => model.FieldofstudiesNavigation.Fieldname)<br />
+                        <br />
+                        <h6 class="card-title">Current Work Experience</h6>
+                        <strong>PLC :</strong>@Html.DisplayFor(model => model.CweplcNavigation.Positiontype)<br />
+                        <strong>Non-PLC: </strong>@Html.DisplayFor(model => model.CwenonplcNavigation.Positiontype)<br />
+                        <strong>Govt: </strong>@Html.DisplayFor(model => model.CwegovtNavigation.Positiontype)<br />
+                        <strong>Pvt. Academic: </strong>@Html.DisplayFor(model => model.CweacademicNavigation.Positiontype)<br />
+                        <br />
+                        <h6 class="card-title">Association</h6>
+                        <strong>Professional Body: </strong>@Html.DisplayFor(model => model.ProfessionalbodyNavigation.Organizationtype)<br />
+                        <strong>Voluntary Body: </strong>@Html.DisplayFor(model => model.VoluntarybodyNavigation.Organizationtype)
+                    </p>                   
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Photo</h5>
+                    <p class="card-text">
+                        <div>
+                            @if (Model.Photo == null || Model.Photo == String.Empty)
+                            {
+                                <img src="~/photos/noPhotoAvailable.jpg" />
+                             }
+                             else
+                            {
+                           <img src="@Url.Content("~/photos/"+Model.Photo)" />
+                             }
+                        </div>
+                    </p>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    Information
+                </div>
+                <div class="card-body">
+                    @if (Model.Info == null || Model.Info == String.Empty)
+                     {
+                    <p>No info available</p> 
+
+                     }
+                     else
+                     {
+                      @Html.Raw(Model.Info)
+                     }
+                </div>
+            </div>
+        </div>
+    </div>
+
+<p></p>
+<div>
+    <a href="@Context.Request.Headers["Referer"]" class="btn btn-info">Back</a> |
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+</div>

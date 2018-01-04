@@ -1,0 +1,60 @@
+﻿@model Wbod.Models.DB.Companies
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="bd-example">
+    <h4>Edit Company Info</h4>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Companyname" class="control-label"></label>
+                <input asp-for="Companyname" class="form-control" />
+                <span asp-validation-for="Companyname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Isglc" class="control-label"></label>
+                <select asp-for="Isglc" class="form-control" asp-items="ViewBag.Isglc"></select>
+                <span asp-validation-for="Isglc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Companysector" class="control-label"></label>
+                <select asp-for="Companysector" class="form-control" asp-items="ViewBag.Companysector"></select>
+                <span asp-validation-for="Companysector" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Companytype" class="control-label"></label>
+                <select asp-for="Companytype" class="form-control" asp-items="ViewBag.Companytype"></select>
+                <span asp-validation-for="Companytype" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Companylist" class="control-label"></label>
+                <select asp-for="Companylist" class="form-control" asp-items="ViewBag.Companylist"></select>
+                <span asp-validation-for="Companylist" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Companyboardsize" class="control-label"></label>
+                <input asp-for="Companyboardsize" class="form-control" />
+                <span asp-validation-for="Companyboardsize" class="text-danger"></span>
+            </div>
+            <div class="form-check">
+                <label asp-for="Companyisactive" class="control-label"></label>
+                <input asp-for="Companyisactive" class="form-check" />
+                <span asp-validation-for="Companyisactive" class="text-danger"></span>
+                <p></p>
+            </div>
+            <div class="form-group">
+                <a href="@Context.Request.Headers["Referer"]" class="btn btn-secondary">Back</a> | <input type="submit" value="Save" class="btn btn-primary" />
+                
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

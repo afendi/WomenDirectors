@@ -1,0 +1,30 @@
+﻿@model LoginModel
+@{
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+
+
+
+
+<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="bg-primary m-1 p-1 text-white col-6"><h4>Please Log In to WBOD</h4></div>
+        <div class="col-6">
+            <form asp-action="Login" method="post">
+                <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
+                <div class="form-group">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password"></label>
+                    <input asp-for="Password" class="form-control" />
+                </div>
+                <button class="btn btn-primary" type="submit">Log In</button>
+            </form>
+            <div class="text-danger" asp-validation-summary="All"></div>
+        </div>
+    </div>
+</div>

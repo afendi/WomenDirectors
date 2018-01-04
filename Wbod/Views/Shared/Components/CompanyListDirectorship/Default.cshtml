@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Wbod.Models.SessionRecordsVM>
+
+@{
+    Layout = null;
+}
+
+
+<table class="table table-sm table-bordered">
+    <thead>
+        <tr>
+                <th>Record for Year</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count() == 0)
+        {
+        <tr><td colspan="1" class="text-center">No Previous Directorship Records</td></tr>
+        }
+        else
+        {
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            <a asp-controller="Directorships" asp-action="GetRecords" asp-route-CompanyId="@item.cId" asp-route-SessionId="@item.Id">View Record for Year @Html.DisplayFor(modelItem => item.sessionyear)</a> 
+        </td>
+    </tr>
+    }
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,147 @@
+﻿@model Wbod.Models.DB.Directors
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="bd-example">
+    <h5>Edit Director</h5>
+</div>
+<div class="row">
+    <div class="col col-md-10">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label asp-for="Titledarjah" class="control-label"></label>
+                    <select asp-for="Titledarjah" class="form-control" asp-items="ViewBag.Titledarjah"></select>
+                </div>
+                <div class="form-group col-md-8">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col form-group">
+                    <label asp-for="Gender" class="control-label"></label>
+                    <select asp-for="Gender" class="form-control" asp-items="ViewBag.Gender"></select>
+                </div>
+                <div class="col form-group">
+                    <label asp-for="Age" class="control-label"></label>
+                    <input asp-for="Age" class="form-control" />
+                    <span asp-validation-for="Age" class="text-danger"></span>
+                </div>
+                <div class="col form-group">
+                    <label asp-for="Citizenship" class="control-label"></label>
+                    <select asp-for="Citizenship" class="form-control" asp-items="ViewBag.Citizenship"></select>
+                </div>
+                <div class="col form-group">
+                    <label asp-for="Ethnicity" class="control-label"></label>
+                    <select asp-for="Ethnicity" class="form-control" asp-items="ViewBag.Ethnicity"></select>
+                </div>
+            </div>
+            <div class="form-row">
+
+                <div class="col form-group">
+                    <label asp-for="Educationlevel" class="control-label"></label>
+                    <select asp-for="Educationlevel" class="form-control" asp-items="ViewBag.Educationlevel"></select>
+                </div>
+                <div class="col form-group">
+                    <label asp-for="Placeofeducation" class="control-label"></label>
+                    <select asp-for="Placeofeducation" class="form-control" asp-items="ViewBag.Placeofeducation"></select>
+                </div>
+                <div class="col form-group">
+                    <label asp-for="Fieldofstudies" class="control-label"></label>
+                    <select asp-for="Fieldofstudies" class="form-control" asp-items="ViewBag.Fieldofstudies"></select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col form-group">
+                    <label asp-for="Familytiesone" class="control-label"></label>
+                    <select asp-for="Familytiesone" class="form-control" asp-items="ViewBag.Familytiesone"></select>
+                </div>
+                <div class="col form-group">
+                    <label asp-for="Familytiestwo" class="control-label"></label>
+                    <select asp-for="Familytiestwo" class="form-control" asp-items="ViewBag.Familytiestwo"></select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col form-group">
+                    <label asp-for="Professionalbody" class="control-label"></label>
+                    <select asp-for="Professionalbody" class="form-control" asp-items="ViewBag.Professionalbody"></select>
+                </div>
+                <div class="col form-group">
+                    <label asp-for="Voluntarybody" class="control-label"></label>
+                    <select asp-for="Voluntarybody" class="form-control" asp-items="ViewBag.Voluntarybody"></select>
+                </div>
+            </div>
+            <fieldset>
+                <legend>Current Work Experience (CWE)</legend>
+                <div class="form-row">
+                    <div class="col form-group">
+                        <label asp-for="Cweplc" class="control-label"></label>
+                        <select asp-for="Cweplc" class="form-control" asp-items="ViewBag.Cweplc"></select>
+                    </div>
+                    <div class="col form-group">
+                        <label asp-for="Cwenonplc" class="control-label"></label>
+                        <select asp-for="Cwenonplc" class="form-control" asp-items="ViewBag.Cwenonplc"></select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col form-group">
+                        <label asp-for="Cwegovt" class="control-label"></label>
+                        <select asp-for="Cwegovt" class="form-control" asp-items="ViewBag.Cwegovt"></select>
+                    </div>
+                    <div class="col form-group">
+                        <label asp-for="Cweacademic" class="control-label"></label>
+                        <select asp-for="Cweacademic" class="form-control" asp-items="ViewBag.Cweacademic"></select>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="form-group">
+                <label asp-for="Yearofbirth" class="control-label"></label>
+                <input asp-for="Yearofbirth" class="form-control" />
+                <span asp-validation-for="Yearofbirth" class="text-danger"></span>
+            </div>
+            <label asp-for="MyImage" class="control-label"></label>
+            <input asp-for="MyImage" class="form-control" />
+            <span asp-validation-for="MyImage" class="text-danger"></span>
+            <div class="form-group">
+                <label asp-for="Info" class="control-label"></label>
+                <textarea id="Info" name="Info"></textarea>
+                <span asp-validation-for="Info" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+               <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+            <input type="hidden" asp-for="Id" />            
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote-bs4.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote-bs4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#Info').summernote(
+                {
+                    height: 300,                 // set editor height
+                    minHeight: null,             // set minimum height of editor
+                    maxHeight: null,             // set maximum height of editor
+                    focus: false,
+                    toolbar: [
+                        // [groupName, [list of button]]
+                        ['style', ['bold', 'italic', 'underline', 'clear']],
+                        ['font', ['strikethrough', 'superscript', 'subscript']],
+                        ['fontsize', ['fontsize']],
+                        ['color', ['color']],
+                        ['para', ['ul', 'ol', 'paragraph']],
+                        ['height', ['height']]
+                    ]
+                }
+            );
+        });
+    </script>
+}

@@ -1,0 +1,59 @@
+﻿@model Wbod.Models.DB.Directorship
+@{
+    ViewData["Title"] = "Add Director To Company";
+}
+
+<div class="bd-example">
+    Director: @ViewBag.Directorname
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="AddDirectorToPosition" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Cdp1"></label>
+                    <select asp-for="Cdp1" asp-items="ViewBag.Currentdirpositionone" class="form-control"></select>
+                    <span asp-validation-for="Cdp1" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Cdp2"></label>
+                    <select asp-for="Cdp2" asp-items="ViewBag.Currentdirpositiontwo" class="form-control"></select>
+                    <span asp-validation-for="Cdp2" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Daudit"></label>
+                    <select asp-for="Daudit" asp-items="ViewBag.Directoraudit" class="form-control"></select>
+                    <span asp-validation-for="Daudit" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Drenum"></label>
+                    <select asp-for="Drenum" asp-items="ViewBag.Directorrenum" class="form-control"></select>
+                    <span asp-validation-for="Drenum" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Dnom"></label>
+                    <select asp-for="Dnom" asp-items="ViewBag.Directornom" class="form-control"></select>
+                    <span asp-validation-for="Dnom" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Duration"></label>
+                    <input asp-for="Duration" class="form-control">
+                    <span asp-validation-for="Duration" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+
+            <input type="hidden" id="Directorid" value="@ViewBag.DirectorId" name="Directorid" />
+            <input type="hidden" id="Sessionid" value="@ViewBag.SessionId" name="Sessionid" />
+            <input type="hidden" id="Companyid" value="@ViewBag.CompanyId" name="Companyid" />
+        </form>
+</div>
+    </div>
+

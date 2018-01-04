@@ -1,0 +1,73 @@
+﻿@model Wbod.Models.DB.Companies
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="bd-example">
+    <h5>Add New Company to Database</h5>
+</div>
+<div class="row">
+    <div class="col-lg-8">
+        <form asp-action="Create">
+            <div asp-validation-summary="All" class="text-danger"></div>
+                            
+                <div class="form-group">
+                    <label asp-for="Companyname" class="control-label"></label>
+                    <input asp-for="Companyname" class="form-control" />
+                    <span asp-validation-for="Companyname" class="text-danger"></span>
+                </div>
+            
+            
+                <div class="form-group">
+                    <label asp-for="Isglc" class="control-label"></label>
+                    <select asp-for="Isglc" class="form-control" asp-items="ViewBag.Isglc"></select>
+                    <span asp-validation-for="Isglc" class="text-danger"></span>
+                </div>
+            
+           
+                <div class="form-group">
+                    <label asp-for="Companysector" class="control-label"></label>
+                    <select asp-for="Companysector" class="form-control" asp-items="ViewBag.Companysector"></select>
+                    <span asp-validation-for="Companysector" class="text-danger"></span>
+                </div>
+           
+            
+                <div class="form-group">
+                    <label asp-for="Companytype" class="control-label"></label>
+                    <select asp-for="Companytype" class="form-control" asp-items="ViewBag.Companytype"></select>
+                    <span asp-validation-for="Companytype" class="text-danger"></span>
+                </div>
+           
+            
+                <div class="form-group">
+                    <label asp-for="Companylist" class="control-label"></label>
+                    <select asp-for="Companylist" class="form-control" asp-items="ViewBag.Companylist"></select>
+                    <span asp-validation-for="Companylist" class="text-danger"></span>
+                </div>
+            
+           
+                <div class="form-group">
+                    <label asp-for="Companyboardsize" class="control-label"></label>
+                    <input asp-for="Companyboardsize" class="form-control" />
+                    <span asp-validation-for="Companyboardsize" class="text-danger"></span>
+                </div>
+            
+            
+                <div class="form-check">
+                    <label asp-for="Companyisactive" class="control-label"></label>
+                    <input asp-for="Companyisactive" class="form-check" />
+                    <span asp-validation-for="Companyisactive" class="text-danger"></span>
+                </div>
+                <p class="text-danger">Please note that you will be taken to the page to add a director to this new company. You MUST add at least one director.</p>
+            <div class="form-row">
+                <div class="form-group">
+                    <a class="btn btn-default" asp-controller="Home" asp-action="Index">Back to List</a> | <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+                
+            </div>
+        </form>
+    </div>
+</div>
+
+

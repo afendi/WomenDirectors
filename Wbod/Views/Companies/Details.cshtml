@@ -1,0 +1,64 @@
+﻿@model Wbod.Models.DB.Companies
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="bd-example">
+    <h4>Company Info</h4>
+</div>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Companyname)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Companyname)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Isglc)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.IsglcNavigation.Isglcstatus)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Companysector)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.CompanysectorNavigation.Sectornames)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Companytype)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.CompanytypeNavigation.Typenames)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Companylist)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.CompanylistNavigation.Companylistsname)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Companyboardsize)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Companyboardsize)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Companyisactive)
+        </dt>
+        <dd class="col-sm-9">
+            @(Model.Companyisactive? "Yes" : "No")
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index" asp-controller="Home" class="btn btn-secondary">Back</a>  | <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+
+</div>
+<div>
+    <hr />
+</div>
+@await Component.InvokeAsync(nameof(CompanyListDirectorship))

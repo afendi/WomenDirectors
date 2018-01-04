@@ -1,0 +1,72 @@
+﻿@model Wbod.Models.DB.Directorship
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Directorship</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cdp1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cdp1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cdp2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cdp2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Daudit)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Daudit)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Drenum)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Drenum)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dnom)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dnom)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Duration)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Duration)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Company)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Company.Companyname)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Director)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Director.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Session)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Session.Sessionyear)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

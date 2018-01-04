@@ -1,0 +1,63 @@
+﻿@model Wbod.Models.DB.Companies
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Companies</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Companyname)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Companyname)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Isglc)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Isglc)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Companysector)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Companysector)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Companytype)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Companytype)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Companylist)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Companylist)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Companyboardsize)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Companyboardsize)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Companyisactive)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Companyisactive)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
