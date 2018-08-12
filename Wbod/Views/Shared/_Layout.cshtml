@@ -8,7 +8,6 @@
         <link rel="stylesheet" href="~/css/bootstrap.min.css">        
         <link rel="stylesheet" href="~/css/site.css" />
         <link rel="stylesheet" href="~/css/dataTables.bootstrap4.min.css" />
-        @RenderSection("Styles", required: false)
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"
@@ -17,6 +16,8 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
         <link rel="stylesheet" href="~/css/dataTables.bootstrap4.min.css" />
     </environment>
+    <!-- Render Style -->
+    @RenderSection("Styles", required: false)
 
 </head>
 <body>
