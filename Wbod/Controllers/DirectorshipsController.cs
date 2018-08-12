@@ -263,7 +263,7 @@ namespace Wbod.Controllers
         {
             ViewBag.SessionId = Sessionid;
             ViewBag.CompanyId = Companyid;
-            ViewBag.returnUrl = Request.Headers["Referer"].ToString();
+            //ViewBag.returnUrl = Request.Headers["Referer"].ToString();
             ViewData["Currentdirpositionone"] = new SelectList(_context.Currentdirpositionone, "Id", "Positiontype");
             ViewData["Currentdirpositiontwo"] = new SelectList(_context.Currentdirpositiontwo, "Id", "Positiontype");
             ViewData["Directoraudit"] = new SelectList(_context.Directoraudit, "Id", "Positiontype");

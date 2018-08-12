@@ -62,24 +62,24 @@ namespace Wbod
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute(
-                    name: "route6",
-                    template: "Companies/AttachDirectorToNewCompany/Company/{CompanyId}/Director/{DirectorId}/Session/{SessionId}");
-                routes.MapRoute(
-                    name: "route5",
-                    template: "Companies/AddDirectorToNewCompany/Company/{CompanyId}/Session/{SessionId}");
-                routes.MapRoute(
-                    name: "route4",
-                    template: "Directorships/Records/Company/{Companyid}/Session/{Sessionid}");
-                routes.MapRoute(
-                    name: "route3",
-                    template: "Directorships/AddDirector/Company/{Companyid}/Session/{Sessionid}/Director/{Directorid}");
-                routes.MapRoute(
-                    name: "route2",
-                    template: "Directorships/AttachDirector/{Companyid}/Session/{Sessionid}");
-                routes.MapRoute(
-                    name: "route1",
-                    template: "Directorships/Company/{Companyid}/Session/{Sessionid}");
+                //routes.MapRoute(
+                    //name: "route6",
+                    //template: "Companies/AttachDirectorToNewCompany/Company/{CompanyId}/Director/{DirectorId}/Session/{SessionId}");
+                //routes.MapRoute(
+                    //name: "route5",
+                    //template: "Companies/AddDirectorToNewCompany/Company/{CompanyId}/Session/{SessionId}");
+                //routes.MapRoute(
+                    //name: "route4",
+                    //template: "Directorships/Records/Company/{Companyid}/Session/{Sessionid}");
+                //routes.MapRoute(
+                    //name: "route3",
+                    //template: "Directorships/AddDirector/Company/{Companyid}/Session/{Sessionid}/Director/{Directorid}");
+                //routes.MapRoute(
+                    //name: "route2",
+                    //template: "Directorships/AttachDirector/{Companyid}/Session/{Sessionid}");
+                //routes.MapRoute(
+                    //name: "route1",
+                    //template: "Directorships/Company/{Companyid}/Session/{Sessionid}");
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
