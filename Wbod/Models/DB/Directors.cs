@@ -17,7 +17,7 @@ namespace Wbod.Models.DB
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
-        public int Gender { get; set; }
+        public int Gender { get; set; }        
         public string Info { get; set; }
         public string Photo { get; set; }
         public int? Age { get; set; }
@@ -35,9 +35,9 @@ namespace Wbod.Models.DB
         public int? Familytiesone { get; set; }
         [DisplayName("Family Ties 2")]
         public int? Familytiestwo { get; set; }
-        [DisplayName("Professional Body")]
+        [DisplayName("Affliation 1")]
         public int? Professionalbody { get; set; }
-        [DisplayName("Voluntary Body")]
+        [DisplayName("Affliation 2")]
         public int? Voluntarybody { get; set; }
         [DisplayName("CWE PLC")]
         public int? Cweplc { get; set; }
