@@ -36,10 +36,41 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
+                    <label asp-for="Desos"></label>
+                    <select asp-for="Desos" asp-items="ViewBag.Directoresos" class="form-control"></select>
+                    <span asp-validation-for="Desos" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Drisk"></label>
+                    <select asp-for="Drisk" asp-items="ViewBag.Directorrisk" class="form-control"></select>
+                    <span asp-validation-for="Drisk" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Dexec"></label>
+                    <select asp-for="Dexec" asp-items="ViewBag.Directorexec" class="form-control"></select>
+                    <span asp-validation-for="Dexec" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Dtender"></label>
+                    <select asp-for="Dtender" asp-items="ViewBag.Directortender" class="form-control"></select>
+                    <span asp-validation-for="Dtender" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
                     <label asp-for="Dnom"></label>
                     <select asp-for="Dnom" asp-items="ViewBag.Directornom" class="form-control"></select>
                     <span asp-validation-for="Dnom" class="text-danger"></span>
                 </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Dfinance"></label>
+                    <select asp-for="Dfinance" asp-items="ViewBag.Directorfinance" class="form-control"></select>
+                    <span asp-validation-for="Dfinance" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
                 <div class="form-group col-md-6">
                     <label asp-for="Duration"></label>
                     <input asp-for="Duration" class="form-control">

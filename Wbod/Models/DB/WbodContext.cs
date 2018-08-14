@@ -30,6 +30,11 @@ namespace Wbod.Models.DB
         public virtual DbSet<Directoraudit> Directoraudit { get; set; }
         public virtual DbSet<Directornom> Directornom { get; set; }
         public virtual DbSet<Directorrenum> Directorrenum { get; set; }
+        public virtual DbSet<Directoresos> Directoresos { get; set; }
+        public virtual DbSet<Directorrisk> Directorrisk { get; set; }
+        public virtual DbSet<Directorexec> Directorexec { get; set; }
+        public virtual DbSet<Directortender> Directortender { get; set; }
+        public virtual DbSet<Directorfinance> Directorfinance { get; set; }
         public virtual DbSet<Directors> Directors { get; set; }
         public virtual DbSet<Directorship> Directorship { get; set; }
         public virtual DbSet<Dshipraw> Dshipraw { get; set; }
@@ -460,6 +465,71 @@ namespace Wbod.Models.DB
                     .HasMaxLength(100);
             });
 
+            modelBuilder.Entity<Directoresos>(entity =>
+            {
+                entity.ToTable("directoresos");
+                
+
+                entity.Property(e => e.Id).HasColumnType("int(11)");
+
+                entity.Property(e => e.Positiontype)
+                    .IsRequired()
+                    .HasColumnName("positiontype")
+                    .HasMaxLength(100);
+            });
+
+            modelBuilder.Entity<Directorrisk>(entity =>
+            {
+                entity.ToTable("directorrisk");
+
+
+                entity.Property(e => e.Id).HasColumnType("int(11)");
+
+                entity.Property(e => e.Positiontype)
+                    .IsRequired()
+                    .HasColumnName("positiontype")
+                    .HasMaxLength(100);
+            });
+
+            modelBuilder.Entity<Directorexec>(entity =>
+            {
+                entity.ToTable("directorexec");
+
+
+                entity.Property(e => e.Id).HasColumnType("int(11)");
+
+                entity.Property(e => e.Positiontype)
+                    .IsRequired()
+                    .HasColumnName("positiontype")
+                    .HasMaxLength(100);
+            });
+
+            modelBuilder.Entity<Directortender>(entity =>
+            {
+                entity.ToTable("directortender");
+
+
+                entity.Property(e => e.Id).HasColumnType("int(11)");
+
+                entity.Property(e => e.Positiontype)
+                    .IsRequired()
+                    .HasColumnName("positiontype")
+                    .HasMaxLength(100);
+            });
+
+            modelBuilder.Entity<Directorfinance>(entity =>
+            {
+                entity.ToTable("directorfinance");
+
+
+                entity.Property(e => e.Id).HasColumnType("int(11)");
+
+                entity.Property(e => e.Positiontype)
+                    .IsRequired()
+                    .HasColumnName("positiontype")
+                    .HasMaxLength(100);
+            });
+
             modelBuilder.Entity<Directors>(entity =>
             {
                 entity.ToTable("directors");
@@ -782,6 +852,36 @@ namespace Wbod.Models.DB
                     .HasForeignKey(d => d.Drenum)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("directorship___dirrenum");
+
+                entity.HasOne(d => d.DesosNavigation)
+                    .WithMany(p => p.Directorship)
+                    .HasForeignKey(d => d.Desos)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("directorship___diresos");
+
+                entity.HasOne(d => d.DriskNavigation)
+                                    .WithMany(p => p.Directorship)
+                                    .HasForeignKey(d => d.Drisk)
+                                    .OnDelete(DeleteBehavior.ClientSetNull)
+                                    .HasConstraintName("directorship___dirrisk");
+
+                entity.HasOne(d => d.DexecNavigation)
+                                    .WithMany(p => p.Directorship)
+                                    .HasForeignKey(d => d.Dexec)
+                                    .OnDelete(DeleteBehavior.ClientSetNull)
+                                    .HasConstraintName("directorship___direxec");
+
+                entity.HasOne(d => d.DtenderNavigation)
+                                    .WithMany(p => p.Directorship)
+                                    .HasForeignKey(d => d.Dtender)
+                                    .OnDelete(DeleteBehavior.ClientSetNull)
+                                    .HasConstraintName("directorship___dirtender");
+
+                entity.HasOne(d => d.DfinanceNavigation)
+                                    .WithMany(p => p.Directorship)
+                                    .HasForeignKey(d => d.Dfinance)
+                                    .OnDelete(DeleteBehavior.ClientSetNull)
+                                    .HasConstraintName("directorship___dirfinance");
 
                 entity.HasOne(d => d.Session)
                     .WithMany(p => p.Directorship)

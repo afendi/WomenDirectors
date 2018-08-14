@@ -67,7 +67,7 @@ namespace Wbod.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Cdp1,Cdp2,Daudit,Drenum,Dnom,Duration,Directorid,Companyid,SessionId")] Directorship directorship)
+        public async Task<IActionResult> Create([Bind("Id,Cdp1,Cdp2,Daudit,Drenum,Dnom,Desos,Drisk,Dexec,Dtender,Dfinance,Duration,Directorid,Companyid,SessionId")] Directorship directorship)
         {
             if (ModelState.IsValid)
             {
@@ -105,6 +105,12 @@ namespace Wbod.Controllers
             ViewData["Directoraudit"] = new SelectList(_context.Directoraudit, "Id", "Positiontype");
             ViewData["Directorrenum"] = new SelectList(_context.Directorrenum, "Id", "Positiontype");
             ViewData["Directornom"] = new SelectList(_context.Directornom, "Id", "Positiontype");
+            ViewData["Directoresos"] = new SelectList(_context.Directoresos, "Id", "Positiontype");
+            ViewData["Directorrisk"] = new SelectList(_context.Directorrisk, "Id", "Positiontype");
+            ViewData["Directorexec"] = new SelectList(_context.Directorexec, "Id", "Positiontype");
+            ViewData["Directortender"] = new SelectList(_context.Directortender, "Id", "Positiontype");
+            ViewData["Directorfinance"] = new SelectList(_context.Directorfinance, "Id", "Positiontype");
+
             return View(directorship);
         }
 
@@ -269,12 +275,17 @@ namespace Wbod.Controllers
             ViewData["Directoraudit"] = new SelectList(_context.Directoraudit, "Id", "Positiontype");
             ViewData["Directorrenum"] = new SelectList(_context.Directorrenum, "Id", "Positiontype");
             ViewData["Directornom"] = new SelectList(_context.Directornom, "Id", "Positiontype");
+            ViewData["Directoresos"] = new SelectList(_context.Directoresos, "Id", "Positiontype");
+            ViewData["Directorrisk"] = new SelectList(_context.Directorrisk, "Id", "Positiontype");
+            ViewData["Directorexec"] = new SelectList(_context.Directorexec, "Id", "Positiontype");
+            ViewData["Directortender"] = new SelectList(_context.Directortender, "Id", "Positiontype");
+            ViewData["Directorfinance"] = new SelectList(_context.Directorfinance, "Id", "Positiontype");
             return View();
         }
         [Route("Directorships/Company/{Companyid:int}/Session/{Sessionid:int}")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AttachDirector([Bind("Id,Cdp1,Cdp2,Daudit,Drenum,Dnom,Duration,Directorid,Companyid,SessionId")] Directorship directorship)
+        public async Task<IActionResult> AttachDirector([Bind("Id,Cdp1,Cdp2,Daudit,Drenum,Dnom,Drisk,Dexec,Dtender,DfinanceDuration,Directorid,Companyid,SessionId")] Directorship directorship)
         {
             if (ModelState.IsValid)
             {
@@ -355,6 +366,11 @@ namespace Wbod.Controllers
             ViewData["Directoraudit"] = new SelectList(_context.Directoraudit, "Id", "Positiontype");
             ViewData["Directorrenum"] = new SelectList(_context.Directorrenum, "Id", "Positiontype");
             ViewData["Directornom"] = new SelectList(_context.Directornom, "Id", "Positiontype");
+            ViewData["Directoresos"] = new SelectList(_context.Directoresos, "Id", "Positiontype");
+            ViewData["Directorrisk"] = new SelectList(_context.Directorrisk, "Id", "Positiontype");
+            ViewData["Directorexec"] = new SelectList(_context.Directorexec, "Id", "Positiontype");
+            ViewData["Directortender"] = new SelectList(_context.Directortender, "Id", "Positiontype");
+            ViewData["Directorfinance"] = new SelectList(_context.Directorfinance, "Id", "Positiontype");
             string namad = (from d in _context.Directors where d.Id == DirectorId select d.Name ).First().ToString();
             ViewBag.Directorname = namad;
             return View();
