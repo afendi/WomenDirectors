@@ -76,7 +76,7 @@ namespace Wbod.Controllers
                 ViewBag.CompanyId = companies.Id;
                 var latestsession = _context.Sessions.Max(x => x.Id);
                 ViewBag.SessionId = latestsession;
-                return Redirect("AddDirectorToNewCompany/Company/"+companies.Id+"/Session/"+latestsession);
+                return Redirect("/Directorships/Company/" + companies.Id+"/Session/"+latestsession);
             }
             return View(companies);
         }
