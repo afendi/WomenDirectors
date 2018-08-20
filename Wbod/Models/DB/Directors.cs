@@ -29,6 +29,8 @@ namespace Wbod.Models.DB
         public int? Placeofeducation { get; set; }
         [DisplayName("Field of Education")]
         public int? Fieldofstudies { get; set; }
+        [DisplayName("Field of Education 2")]
+        public int? Fieldofstudies2 { get; set; }
         [DisplayName("Title/Darjah")]
         public int? Titledarjah { get; set; }
         [DisplayName("Family Ties 1")]
@@ -63,6 +65,7 @@ namespace Wbod.Models.DB
         public Familytiesonetable FamilytiesoneNavigation { get; set; }
         public Familytiestwotable FamilytiestwoNavigation { get; set; }
         public Fieldofstudiestable FieldofstudiesNavigation { get; set; }
+        public Fieldofstudiestable2 FieldofstudiesNavigation2 { get; set; }
         public Gendertable GenderNavigation { get; set; }
         public Placeofeducationtable PlaceofeducationNavigation { get; set; }
         public Professionalbodytable ProfessionalbodyNavigation { get; set; }

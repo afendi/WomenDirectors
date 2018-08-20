@@ -29,6 +29,8 @@ namespace Wbod
             services.AddTransient<IPasswordValidator<AppUser>, CustomPasswordValidator>();
             services.AddTransient<IUserValidator<AppUser>, CustomUserValidator>();
 
+            
+
             services.AddMvc().AddJsonOptions(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore); ;
             services.AddDbContext<WbodContext>(options =>
             options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
@@ -59,7 +61,7 @@ namespace Wbod
 
             app.UseStaticFiles();
             app.UseAuthentication();
-
+            //app.UseMiddleware<StackifyMiddleware.RequestTracerMiddleware>();
             app.UseMvc(routes =>
             {
                 //routes.MapRoute(

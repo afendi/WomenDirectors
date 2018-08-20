@@ -44,6 +44,7 @@ namespace Wbod.Models.DB
         public virtual DbSet<Familytiesonetable> Familytiesonetable { get; set; }
         public virtual DbSet<Familytiestwotable> Familytiestwotable { get; set; }
         public virtual DbSet<Fieldofstudiestable> Fieldofstudiestable { get; set; }
+        public virtual DbSet<Fieldofstudiestable2> Fieldofstudiestable2 { get; set; }
         public virtual DbSet<Gendertable> Gendertable { get; set; }
         public virtual DbSet<Glcstatus> Glcstatus { get; set; }
         public virtual DbSet<Placeofeducationtable> Placeofeducationtable { get; set; }
@@ -625,6 +626,10 @@ namespace Wbod.Models.DB
                     .HasColumnName("fieldofstudies")
                     .HasColumnType("int(11)");
 
+                entity.Property(e => e.Fieldofstudies2)
+                    .HasColumnName("fieldofstudies2")
+                    .HasColumnType("int(11)");
+
                 entity.Property(e => e.Gender)
                     .HasColumnName("gender")
                     .HasColumnType("int(11)");
@@ -711,6 +716,11 @@ namespace Wbod.Models.DB
                     .WithMany(p => p.Directors)
                     .HasForeignKey(d => d.Fieldofstudies)
                     .HasConstraintName("FK_fieldofstudies");
+
+                entity.HasOne(d => d.FieldofstudiesNavigation2)
+                    .WithMany(p => p.Directors)
+                    .HasForeignKey(d => d.Fieldofstudies2)
+                    .HasConstraintName("FK_fieldofstudies2");
 
                 entity.HasOne(d => d.GenderNavigation)
                     .WithMany(p => p.Directors)
@@ -1022,6 +1032,18 @@ namespace Wbod.Models.DB
             modelBuilder.Entity<Fieldofstudiestable>(entity =>
             {
                 entity.ToTable("fieldofstudiestable");
+
+                entity.Property(e => e.Id).HasColumnType("int(11)");
+
+                entity.Property(e => e.Fieldname)
+                    .IsRequired()
+                    .HasColumnName("fieldname")
+                    .HasMaxLength(55);
+            });
+
+            modelBuilder.Entity<Fieldofstudiestable2>(entity =>
+            {
+                entity.ToTable("fieldofstudiestable2");
 
                 entity.Property(e => e.Id).HasColumnType("int(11)");
 

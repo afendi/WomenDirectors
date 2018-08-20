@@ -50,6 +50,7 @@ namespace Wbod.Controllers
                 .Include(d => d.FamilytiesoneNavigation)
                 .Include(d => d.FamilytiestwoNavigation)
                 .Include(d => d.FieldofstudiesNavigation)
+                .Include(d => d.FieldofstudiesNavigation2)
                 .Include(d => d.GenderNavigation)
                 .Include(d => d.PlaceofeducationNavigation)
                 .Include(d => d.ProfessionalbodyNavigation)
@@ -77,6 +78,7 @@ namespace Wbod.Controllers
             ViewData["Familytiesone"] = new SelectList(_context.Familytiesonetable, "Id", "Id");
             ViewData["Familytiestwo"] = new SelectList(_context.Familytiestwotable, "Id", "Id");
             ViewData["Fieldofstudies"] = new SelectList(_context.Fieldofstudiestable, "Id", "Fieldname");
+            ViewData["Fieldofstudies2"] = new SelectList(_context.Fieldofstudiestable, "Id", "Fieldname");
             ViewData["Gender"] = new SelectList(_context.Gendertable, "Id", "Gendertype");
             ViewData["Placeofeducation"] = new SelectList(_context.Placeofeducationtable, "Id", "Place");
             ViewData["Professionalbody"] = new SelectList(_context.Professionalbodytable, "Id", "Id");
@@ -90,7 +92,7 @@ namespace Wbod.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Gender,Info,Photo,Age,Citizenship,Ethnicity,Educationlevel,Placeofeducation,Fieldofstudies,Titledarjah,Familytiesone,Familytiestwo,Professionalbody,Voluntarybody,Cweplc,Cwenonplc,Cwegovt,Cweacademic,Yearofbirth")] Directors directors)
+        public async Task<IActionResult> Create([Bind("Id,Name,Gender,Info,Photo,Age,Citizenship,Ethnicity,Educationlevel,Placeofeducation,Fieldofstudies,Fieldofstudies2,Titledarjah,Familytiesone,Familytiestwo,Professionalbody,Voluntarybody,Cweplc,Cwenonplc,Cwegovt,Cweacademic,Yearofbirth")] Directors directors)
         {
             if (ModelState.IsValid)
             {
@@ -108,6 +110,7 @@ namespace Wbod.Controllers
             ViewData["Familytiesone"] = new SelectList(_context.Familytiesonetable, "Id", "Id", directors.Familytiesone);
             ViewData["Familytiestwo"] = new SelectList(_context.Familytiestwotable, "Id", "Id", directors.Familytiestwo);
             ViewData["Fieldofstudies"] = new SelectList(_context.Fieldofstudiestable, "Id", "Fieldname", directors.Fieldofstudies);
+            ViewData["Fieldofstudies2"] = new SelectList(_context.Fieldofstudiestable, "Id", "Fieldname", directors.Fieldofstudies2);
             ViewData["Gender"] = new SelectList(_context.Gendertable, "Id", "Gendertype", directors.Gender);
             ViewData["Placeofeducation"] = new SelectList(_context.Placeofeducationtable, "Id", "Place", directors.Placeofeducation);
             ViewData["Professionalbody"] = new SelectList(_context.Professionalbodytable, "Id", "Id", directors.Professionalbody);
@@ -139,6 +142,7 @@ namespace Wbod.Controllers
             ViewData["Familytiesone"] = new SelectList(_context.Familytiesonetable, "Id", "Tiestype", directors.Familytiesone);
             ViewData["Familytiestwo"] = new SelectList(_context.Familytiestwotable, "Id", "Tiestype", directors.Familytiestwo);
             ViewData["Fieldofstudies"] = new SelectList(_context.Fieldofstudiestable, "Id", "Fieldname", directors.Fieldofstudies);
+            ViewData["Fieldofstudies2"] = new SelectList(_context.Fieldofstudiestable, "Id", "Fieldname", directors.Fieldofstudies2);
             ViewData["Gender"] = new SelectList(_context.Gendertable, "Id", "Gendertype", directors.Gender);
             ViewData["Placeofeducation"] = new SelectList(_context.Placeofeducationtable, "Id", "Place", directors.Placeofeducation);
             ViewData["Professionalbody"] = new SelectList(_context.Professionalbodytable, "Id", "Organizationtype", directors.Professionalbody);
@@ -152,7 +156,7 @@ namespace Wbod.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Gender,Info,Photo,Age,Citizenship,Ethnicity,Educationlevel,Placeofeducation,Fieldofstudies,Titledarjah,Familytiesone,Familytiestwo,Professionalbody,Voluntarybody,Cweplc,Cwenonplc,Cwegovt,Cweacademic,Yearofbirth,MyImage")] Directors directors)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Gender,Info,Photo,Age,Citizenship,Ethnicity,Educationlevel,Placeofeducation,Fieldofstudies,Fieldofstudies2,Titledarjah,Familytiesone,Familytiestwo,Professionalbody,Voluntarybody,Cweplc,Cwenonplc,Cwegovt,Cweacademic,Yearofbirth,MyImage")] Directors directors)
         {
             if (ModelState.IsValid)
             {
