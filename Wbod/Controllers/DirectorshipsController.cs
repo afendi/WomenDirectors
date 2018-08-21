@@ -308,6 +308,7 @@ namespace Wbod.Controllers
             ViewData["Familytiesone"] = new SelectList(_context.Familytiesonetable, "Id", "Tiestype");
             ViewData["Familytiestwo"] = new SelectList(_context.Familytiestwotable, "Id", "Tiestype");
             ViewData["Fieldofstudies"] = new SelectList(_context.Fieldofstudiestable, "Id", "Fieldname");
+            ViewData["Fieldofstudies2"] = new SelectList(_context.Fieldofstudiestable2, "Id", "Fieldname");
             ViewData["Gender"] = new SelectList(_context.Gendertable, "Id", "Gendertype");
             ViewData["Placeofeducation"] = new SelectList(_context.Placeofeducationtable, "Id", "Place");
             ViewData["Professionalbody"] = new SelectList(_context.Professionalbodytable, "Id", "Organizationtype");
@@ -320,7 +321,7 @@ namespace Wbod.Controllers
 
         [HttpPost]
         [Route("Directorships/AttachDirector/{Companyid:int}/Session/{Sessionid:int}")]
-        public async Task<IActionResult> AddNewDirectorAndAttach (int CompanyId, int SessionId, [Bind("Id,Name,Gender,Info,Photo,Age,Citizenship,Ethnicity,Educationlevel,Placeofeducation,Fieldofstudies,Titledarjah,Familytiesone,Familytiestwo,Professionalbody,Voluntarybody,Cweplc,Cwenonplc,Cwegovt,Cweacademic,Yearofbirth,MyImage")] Directors directors)
+        public async Task<IActionResult> AddNewDirectorAndAttach (int CompanyId, int SessionId, [Bind("Id,Name,Gender,Info,Photo,Age,Citizenship,Ethnicity,Educationlevel,Placeofeducation,Fieldofstudies,Fieldofstudies2,Titledarjah,Familytiesone,Familytiestwo,Professionalbody,Voluntarybody,Cweplc,Cwenonplc,Cwegovt,Cweacademic,Yearofbirth,MyImage")] Directors directors)
         {
             if (ModelState.IsValid)
             {
