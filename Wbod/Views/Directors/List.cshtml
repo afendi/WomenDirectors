@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "List of Directors in Database";
+}
+<div class="bd-example">
+    List of Directors in Database
+</div>
+<div class="container">
+    <table class="table table-striped" id="dtable">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</div>
+@section scripts{
+
+    <script>
+        $(function () {
+            $('#dtable').DataTable({
+                "paging": true,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": false,
+                "info": true,
+                "autoWidth": true,
+                "columns": [
+                    { data: 'id' },
+                    { data: 'name' },
+                    { data: 'id'}
+                ],
+                "columnDefs": [{
+                    "targets": 2,
+                    "data": 2,
+                    "render": function (data, type, row, meta) {
+                        return '<a class="btn btn-sm btn-info" href="Details/' + data + '">Director Info</a>';
+                    }
+                }],
+                "ajax": {
+                    url: "http://localhost:54026/Directors/DirectorJson",
+                    dataSrc: ""
+                },
+                "deferRender": true
+            });
+        });
+    </script>
+
+}

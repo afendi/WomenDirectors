@@ -24,11 +24,29 @@ namespace Wbod.Controllers
         }
 
         // GET: Directors
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             //var wbodContext = _context.Directors.Include(d => d.CitizenshipNavigation).Include(d => d.CweacademicNavigation).Include(d => d.CwegovtNavigation).Include(d => d.CwenonplcNavigation).Include(d => d.CweplcNavigation).Include(d => d.EducationlevelNavigation).Include(d => d.EthnicityNavigation).Include(d => d.FamilytiesoneNavigation).Include(d => d.FamilytiestwoNavigation).Include(d => d.FieldofstudiesNavigation).Include(d => d.GenderNavigation).Include(d => d.PlaceofeducationNavigation).Include(d => d.ProfessionalbodyNavigation).Include(d => d.TitledarjahNavigation).Include(d => d.VoluntarybodyNavigation);
-            var wbodContext = _context.Directors;
-            return View(await wbodContext.ToListAsync());
+            // --changed -- var wbodContext = _context.Directors;
+            // return View(await wbodContext.ToListAsync());
+            return RedirectToActionPermanent("List");
+        }
+
+        public IActionResult List()
+        {
+            return View();
+        }
+
+        //try json
+        public IActionResult DirectorJson()
+        {
+            var wbodDirectors = _context.Directors.AsNoTracking()
+                .Select(p => new SimpleDirector()
+                {
+                    Id = p.Id,
+                    Name = p.Name
+                });
+            return Json(wbodDirectors);
         }
 
         // GET: Directors/Details/5

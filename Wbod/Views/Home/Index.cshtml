@@ -4,9 +4,13 @@
 }
 
 
-<div class="bd-example">
-    List of Companies
-    <a class="btn btn-sm btn-primary float-right" asp-controller="Companies" asp-action="Create">Add a New Company to Database</a>
+<div class="bd-example">   
+    <div class="row">
+        <div class="col">List of Companies</div>
+        <div class="col">
+            <div class="float-right"><a class="btn btn-sm btn-primary" asp-controller="Companies" asp-action="Create">Add a New Company to Database</a></div>
+        </div>
+    </div>
 </div>
 <div class="container">
     <table class="table table-striped" id="ctable">

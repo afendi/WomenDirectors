@@ -34,4 +34,9 @@ namespace Wbod.Models
         public string Year { get; set; }
     }
 
+    public class SimpleDirector
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+    }
 }
