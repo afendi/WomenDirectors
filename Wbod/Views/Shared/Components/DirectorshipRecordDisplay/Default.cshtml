@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Wbod.Models.DirectorshipRecordVM>
+
+@{
+    Layout = null;
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Year
+            </th>
+            <th>
+                Company
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sessionyear)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Companyname)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
