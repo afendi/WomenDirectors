@@ -119,7 +119,7 @@ namespace Wbod.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, string returnUrl, [Bind("Id,Cdp1,Cdp2,Daudit,Drenum,Dnom,Duration,Directorid,Companyid,SessionId")] Directorship directorship)
+        public async Task<IActionResult> Edit(int id, string returnUrl, [Bind("Id,Cdp1,Cdp2,Daudit,Drenum,Dnom,Desos,Drisk,Dexec,Dtender,Duration,Directorid,Companyid,SessionId")] Directorship directorship)
         {
             if (id != directorship.Id)
             {
